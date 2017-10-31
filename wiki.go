@@ -2,9 +2,10 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
-	"net/http"
 	"html/template"
+	"io/ioutil"
+	"log"
+	"net/http"
 )
 
 type Page struct {
@@ -67,6 +68,6 @@ func main() {
 	http.HandleFunc("/edit/", editHandler)
 	// http.HandleFunc("/save/", saveHandler)
 
-	fmt.Println("SERVING ON PORT 8080")
+	log.Println("SERVING ON PORT 8080")
 	http.ListenAndServe(":8080", nil)
 }
